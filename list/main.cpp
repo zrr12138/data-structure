@@ -5,8 +5,17 @@
 #include "list.h"
 
 int main() {
-    std::cout << list::f(2) << std::endl;
-    std::cout << "Hello, World!" << std::endl;
-
+    List myList;
+    myList.initList(3);
+    myList.showList();
+    myList.insertList(1, 9);
+    myList.showList();
+    myList.deleteList(2);
+    myList.showList();
+    myList.modifyList(3, 888);
+    myList.showList();
+    std::cout << myList.inquireIndex(3) << std::endl;
+    myList.inquireData(888);
+    std::cout << myList.getLength() << std::endl;
     return 0;
 }
