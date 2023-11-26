@@ -4,6 +4,7 @@
 
 #ifndef DATA_STRUCTURE_LIST_H
 #define DATA_STRUCTURE_LIST_H
+#include <cstdint>
 
 // 节点
 class Node {
@@ -11,6 +12,8 @@ public:
     int data;
     Node *pNext;
     Node *pLast;
+    Node* Next();
+    Node* Last();
 };
 
 // 双向链表
@@ -18,19 +21,21 @@ class List {
 private:
     Node *pHead;
     Node *pTail;
-    int length;
+    size_t length;
 public:
     List(); // 构造函数
-    void showList(); // 打印链表
-    int getLength(); // 获取链表长度
-    void insertData(int index, int data); // 在index处插入数据data
-    void initList(int len); // 初始化链表
-    void insertList(int index, int data); // 在链表中index处插入数据data【增】
-    void deleteList(int index); // 删除链表中index处数据【删】
-    void modifyList(int index, int data); // 修改链表中index处数据为data【改】
-    int inquireIndex(int index); // 在链表中查询index处所在数据data【查】
-    void inquireData(int data); // 在链表中查询数据data所在所有index【查】
+    List(int n);
+    void push_back(int value);
+    void push_front(int value);
+    Node* insert(Node* pos,int value);// insert element before pos , return the pointer to new element
+    Node* erase(Node *pos);
+    Node* begin();
+    Node* rbegin();
+    Node* end();
+    Node* rend();
+    size_t size();
 };
 
 
 #endif //DATA_STRUCTURE_LIST_H
+// 设计一套好的api是很难的事情，所以要参考别人的api设计，STL
