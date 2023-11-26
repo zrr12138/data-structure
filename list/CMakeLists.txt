@@ -6,11 +6,10 @@ include_directories(${PROJECT_BINARY_DIR}/list)
 include_directories(${PROJECT_BINARY_DIR}/third-party/googletest-1.12.1)
 # include_directories(${PROJECT_BINARY_DIR}/third-party/googletest-1.14.0)
 
-# add_executable(list main.cpp list.cpp)
+add_executable(list main.cpp list.cpp)
 
-# set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# enable_testing()
+# Test
 add_executable(list_test list_test.cpp)
 target_link_libraries(list_test GTest::gtest_main)
 # include(GoogleTest)
